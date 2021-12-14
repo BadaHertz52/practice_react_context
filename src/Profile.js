@@ -4,10 +4,9 @@ import  { ProfileContext } from "./component/ProfileContext";
 import { useState } from "react/cjs/react.development";
 import EditProfile from "./component/EditProfile";
 const Profile =()=>{
-  const {state} = useContext(ProfileContext);
-  const {userName, introduce, header, photo} =state.myProfile;
+  const {myProfile} = useContext(ProfileContext);
+  const {userName, introduce, header, photo} =myProfile;
   const [popup, setPopup] =useState(false);
-  console.log(state.myProfile);
   return(
     <>
     <section id="profile">

@@ -1,12 +1,99 @@
-.nweets{
+#createNweet form , #nweetList {
+  padding: 5%
+}
+#main .profilePhoto {
+  width: 5.5vw;
+  height: 5.5vw;
+  border-radius: 50%;
+  margin: initial;
+}
+#main>div:first-child{
+  padding: 5%;
+  font-size: 3vw;
+  font-weight: bolder;
+}
+#input_attachment {
+  display: none;
+}
+#createNweet form {
+  display: flex;
+  flex-direction: row;
+  border :1px solid rgb(179, 179, 179);
+  font-size: 2.3vw;
+}
+#createNweet form > div {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
+#text_attachment {
+  padding :4% ;
+}
+#text_attachment input{
+  font-size: 2.3vw;
+  border: none;
+  width: 100%;
+}
+#text_attachment input:focus-visible{
+  outline: none;
+}
+#createNweet label{
+  padding: 2%;
+  font-size: 2.7vw;
+  border-radius: 50%;
+  background-color: initial;
+}
+#createNweet label:hover{
+  background-color:  rgb(195, 203, 207);
+}
+#nweetFun{
+  padding-left: 4%;
+  display: flex;
+  justify-content: space-between;
+}
+#nweetFun input:last-child{
+  background-color:rgb(191, 218, 240);
+  border:none;
+  border-radius: 19px ;
+  padding:0 5%;
+}
+#nweetFun input:last-child:hover{
+  background-color:rgb(35, 123, 223); 
+  color: #fff;
+}
 
-.nweets img{
-  width: 60%;
-  height:40%;
-  border-radius:10%;
+/*NweetList*/
+.nweet{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
-.newwts button{
-  display: ;
+.nweet_contents{
+  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
 }
+.nweet_inform{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2vw;
+}
+.nweet_inform div{
+  margin-right:2vw ;
+}
+.nweet_inform button{
+  position:absolute;
+  right:3vw;
+  padding: 1% 2%;
+}
+.nweet_text_attachment{
+  font-size:2.3vw
+}
+.attachment{
+  width: 100%;
+  height: 900/16%;
+  border-radius:10px;
+  margin-top: 2vw;
+}
+

@@ -8,20 +8,18 @@ import CreateNweet from './component/CreateNweet';
 import NweetList from './component/NweetList';
 function App() {
   return(
-    <>
+    <PCProvider>
       <div id="side">
-      <PCProvider>
         <Profile/> 
-      </PCProvider>
       </div>
       <div id="main" >
-      <NCProvider>
-        <CreateNweet/>
-        <NweetList/>
-      </NCProvider>
+        <div>HOME</div>
+        <NCProvider>
+          <CreateNweet/>
+          <NweetList/>
+        </NCProvider>
       </div>
-     
-    </>
+    </PCProvider>
   );
 }
 

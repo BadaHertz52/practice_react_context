@@ -45,7 +45,7 @@ const PCProvider =(props)=>{
   const [state, dispatch]= useReducer(reducer, initialState);
 
   return (
-  <ProfileContext.Provider value={{state:state ,dispatch}}>
+  <ProfileContext.Provider value={{state:state, myProfile:state.myProfile ,dispatch}}>
     {props.children}
   </ProfileContext.Provider>
   )

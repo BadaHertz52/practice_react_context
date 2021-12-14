@@ -1,9 +1,11 @@
 import React, { useCallback } from "react";
 import { useContext } from "react/cjs/react.development";
 import { NweetContext } from "./NweetContext";
+import { ProfileContext } from "./ProfileContext";
 
 const NweetList =()=>{
-
+  const {myProfile} = useContext(ProfileContext);
+  const photo =myProfile.photo;
   const {state, dispatch}=useContext(NweetContext);
   const myNweets =state.myNweets;
   const onDelete =useCallback((createdAt)=>{
@@ -15,16 +17,25 @@ const NweetList =()=>{
   return(
     <section id="nweetList">
     {myNweets && myNweets.map(nweet => (
-      <div className="nweets">
-        <div>
-        <div>{nweet.createdAt}</div>
-        <button onClick={()=>onDelete(nweet.createdAt)}>
-          삭제
-        </button>
+      <div className="nweet">
+        <img className='profilePhoto' alt="profilePhoto" src={photo}/>
+        <div className="nweet_contents">
+          <div className="nweet_inform">
+            <div>{myProfile.userName}</div>
+            <div>{nweet.createdAt}</div>
+            <button onClick={()=>onDelete(nweet.createdAt)}>
+                delete
+            </button>
+          </div>
+          <div className="nweet_text_attachment">
+            <div>{nweet.text}</div>
+            {nweet.attachmentUrl !== "" && 
+            <img src={nweet.attachmentUrl} 
+            className="attachment"
+            alt="Nweetattachment" 
+            />}
+          </div>
         </div>
-        <div>{nweet.text}</div>
-        {nweet.attachmentUrl !== "" && <img src={nweet.attachmentUrl} alt="Nweetattachment" width="100px" height="100px" />}
- 
       </div>
     ))
     }

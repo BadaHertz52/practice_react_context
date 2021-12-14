@@ -12,8 +12,17 @@
 }
 
 #main{
-  padding: 5%;
   display: flex;
   flex-direction: column;
   width: 60%;
+}
+
+label ,button{
+  background-color:rgb(191, 218, 240);
+  border: none;
+  border-radius: 45px;
+}
+label:hover ,button:hover{
+  background-color:rgb(35, 123, 223); 
+  color: #fff;
 }

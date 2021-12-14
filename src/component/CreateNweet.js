@@ -1,8 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { useContext } from 'react/cjs/react.development';
 import { NweetContext} from './NweetContext';
+import { ProfileContext } from './ProfileContext';
 
 const CreateNweet =()=>{
+  const {myProfile} = useContext(ProfileContext);
+  const photo =myProfile.photo;
   const {state, dispatch} = useContext(NweetContext);
   const {text, attachment}=state.inputs;
   const [attachmentUrl, setAttachmentUrl]=useState("");
@@ -47,24 +50,35 @@ const CreateNweet =()=>{
 
   return (
     <section id="createNweet">
-    <form    onSubmit={onCreate}>
-      <input type="text" 
-      name="text"
-      value={text}
-      onChange={onChange}  placeholder="무슨 일이 일어나고 있나요? "/>
-      <label  for="input_attachment">
-        📷
-      </label>
-      <input 
-      type="file"
-      accept="image\*"
-      name="attachment"
-      id="input_attachment" 
-      value={attachment}
-      onChange={onChange}
-      />
-      {attachmentUrl !== "" && <img src={attachmentUrl} alt="attachment" width="100px" height="100px"/>}
-      <input type="submit"  />
+    <form onSubmit={onCreate}>
+      <img className='profilePhoto' alt="profilePhoto" 
+        src={photo}/>
+      <div>
+        <div id="text_attachment">
+          <input type="text" 
+            name="text"
+            value={text}
+            onChange={onChange}  placeholder="무슨 일이 일어나고 있나요? "
+          />
+          {attachmentUrl !== "" && 
+          <img src={attachmentUrl} alt="attachment" width="100px" height="100px"/>
+          }
+        </div>
+        <div id="nweetFun">
+          <label  for="input_attachment">
+            📷 
+          </label>
+          <input 
+          type="file"
+          accept="image\*"
+          name="attachment"
+          id="input_attachment" 
+          value={attachment}
+          onChange={onChange}
+          />
+          <input type="submit" value="create" />
+        </div>
+      </div>
     </form>
     </section>
   )
