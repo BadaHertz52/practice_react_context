@@ -12,7 +12,6 @@ const Profile =()=>{
     <section id="profile">
       {!popup &&
       <>
-      <div>Profile</div>
       <div id="profile_header" className="header">
         <img  src={header} alt='profile_header'/>
       </div>
@@ -28,7 +27,7 @@ const Profile =()=>{
       </div>
       <div>
       <button id="profileEditBtn" onClick={()=>setPopup(true)}>
-          edit
+          수정
         </button>
       </div>
       </> }

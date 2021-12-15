@@ -1,11 +1,24 @@
 #root{
   display: flex;
   height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  top:0;
+
+}
+.dark,
+.dark #side {
+  background-color: rgba(0, 0, 0, 0.349);
 }
 #side{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 30%;
   height: 100%;
-  padding:5% ;
+  padding:3% ;
   display: flex;
   flex-direction: column;
   background-color: rgb(245, 245, 245);
@@ -14,15 +27,25 @@
 #main{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
+  margin-top: 4vh;
 }
 
 label ,button{
-  background-color:rgb(191, 218, 240);
+  background-color:rgb(194, 225, 250);
   border: none;
   border-radius: 45px;
 }
 label:hover ,button:hover{
   background-color:rgb(35, 123, 223); 
   color: #fff;
+}
+
+@media screen and (min-width:1024px) {
+  #side{
+    width: 35%;
+  }
+  #main{
+    width: 65%;
+  }
 }

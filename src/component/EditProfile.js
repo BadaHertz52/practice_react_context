@@ -51,7 +51,7 @@ const EditProfile =({setPopup})=>{
   return(
     <section id="editProfile">
       <div>
-        <p>Edit Profile</p>
+        <p>프로필 수정</p>
         <button onClick={()=>setPopup(false)}>✖</button>
       </div>
       <form onSubmit={onSubmit}>
@@ -75,13 +75,15 @@ const EditProfile =({setPopup})=>{
         <img src={photoUrl} alt="profilePhoto"/>
       </div>
       <div className="userName">
+        <div>닉네임</div>
         <input type="text" name="userName" value={userName} onChange={onChange} placeholder={myProfile.userName} />
       </div>
       <div className="introduce">
+        <div>자기 소개</div>
         <input type="text" name="introduce" value={introduce} onChange={onChange} 
         placeholder={myProfile.introduce}/>
       </div>
-      <input type="submit"/>
+      <input id="editBtn" type="submit" value="수정"/>
     </form>
     </section>
     
