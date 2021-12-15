@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from 'react';
-import { useContext } from 'react/cjs/react.development';
+import React, { useCallback, useState ,useContext } from 'react';
 import { NweetContext} from './NweetContext';
 import { ProfileContext } from './ProfileContext';
 

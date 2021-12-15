@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext ,useState } from "react";
 import  { ProfileContext } from "./component/ProfileContext";
-
-import { useState } from "react/cjs/react.development";
 import EditProfile from "./component/EditProfile";
 const Profile =()=>{
   const {myProfile} = useContext(ProfileContext);
