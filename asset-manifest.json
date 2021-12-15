@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/practice_react_context/static/css/main.1c75c01f.chunk.css",
+    "main.css": "/practice_react_context/static/css/main.ad66374c.chunk.css",
     "main.js": "/practice_react_context/static/js/main.3d624248.chunk.js",
     "main.js.map": "/practice_react_context/static/js/main.3d624248.chunk.js.map",
     "runtime-main.js": "/practice_react_context/static/js/runtime-main.969deecf.js",
@@ -10,7 +10,7 @@
     "static/js/3.0dfb8545.chunk.js": "/practice_react_context/static/js/3.0dfb8545.chunk.js",
     "static/js/3.0dfb8545.chunk.js.map": "/practice_react_context/static/js/3.0dfb8545.chunk.js.map",
     "index.html": "/practice_react_context/index.html",
-    "static/css/main.1c75c01f.chunk.css.map": "/practice_react_context/static/css/main.1c75c01f.chunk.css.map",
+    "static/css/main.ad66374c.chunk.css.map": "/practice_react_context/static/css/main.ad66374c.chunk.css.map",
     "static/js/2.484058ef.chunk.js.LICENSE.txt": "/practice_react_context/static/js/2.484058ef.chunk.js.LICENSE.txt",
     "static/media/sasha.f07de0b3.jpg": "/practice_react_context/static/media/sasha.f07de0b3.jpg",
     "static/media/tangerines.b3b737c8.jpg": "/practice_react_context/static/media/tangerines.b3b737c8.jpg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.969deecf.js",
     "static/js/2.484058ef.chunk.js",
-    "static/css/main.1c75c01f.chunk.css",
+    "static/css/main.ad66374c.chunk.css",
     "static/js/main.3d624248.chunk.js"
   ]
 }
