@@ -90,4 +90,4 @@ const EditProfile =({setPopup})=>{
   )
 };
 
-export default EditProfile;
+export default React.memo(EditProfile);
