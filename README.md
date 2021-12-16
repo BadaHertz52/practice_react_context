@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+## Projcet 소개 
+[프로젝트 바로가기](https://badahertz52.github.io/practice_react_context/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+react로 트위터를 클론코딩하는 프로젝트의 연습 프로젝트로 페이지의 기능을 더할 수록 서버(firebase 를 서버로 이용함)에 대한 읽기 요청 수가 급격하게 증가하는 문제점이 발생하여 이를 해결하기 위해 자주 사용하는 사용자의 프로필과 게시글 목록을  context를 이용하여 전역적으로 사용 할 수 있도록 했다. 
 
-## Available Scripts
+____________________________________________________________________________________________________
+## Context API 에 대해 공부한 내용 
+### 1. 무엇?
 
-In the project directory, you can run:
+  트리 단계로 props를 넘겨주는 react의 단점을 보완한 api 이다.
+  context를 이용해 props를 전역적으로 사용,관리할 수 있다. 
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. 어떻게?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  A. "createContext"로 context 를 생성하고  "context.Provider value "로 넘겨줄 값을 설정한다
 
-### `yarn test`
+  B  context 를 사용할 수 있는 컴포넌트를 설정한다
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  C. "useContext"로 context 를 사용한다. 
 
-### `yarn build`
+- 기본 사용
+    
+    <Context.js>
+    
+    ```jsx
+    import React, { createContext } from "react";
+    
+    export const MyContext =createContext();****
+    
+    const ContextProvider =(props)=>{
+      const users ={
+        name:"안녕",
+        job:"developer"
+      };
+    
+      return <MyContext.Provider value={users} >
+              {props.children}
+              </MyContext.Provider>
+    };
+    
+    export default ContextProvider ;
+    ```
+    
+    <App.js>
+    
+    ```jsx
+    import './App.css';
+    import React from 'react';
+    import ShowContext from './ShowContext';
+    import ContextProvider from './Context';
+    
+    function App() {
+    
+      return(
+        <ContextProvider>
+          <ShowContext/>
+        </ContextProvider>
+      );
+    }
+    
+    export default App;
+    ```
+    
+    <ShowContext.js>
+    
+    ```jsx
+    import React from "react";
+    import { useContext } from "react/cjs/react.development";
+    import { MyContext } from "./Context";
+    
+    const ShowContext =()=>{
+      const user = useContext(MyContext);
+    
+      return(
+        <div>
+          {user.name}
+        </div>
+      )
+    };
+    
+    export default ShowContext;
+    ```
+    
+- useReducer 와 함께 사용
+    
+    <NweetContext.js> :  useReducer와  context 를 생성
+    
+    ```jsx
+    cosnt initialState ={ ...};
+    const reducer =(state, dispatch)=>{
+    ...};
+    export const NweetContext= createContext(null);
+    const NCProvider =(props)=>{
+    const[state, dispatch] = useReducer(reducer, initialState); 
+    
+    return <NweetContext.Provider value={{state: state, dispatch}}>{porps.childer}</NweetContext.Provider>
+    };
+    
+    export default NCProvider ;
+    ```
+    
+    <App. js> - context를 사용할 컴포넌트 지정
+    
+    ```jsx
+    function App(){
+    return (...
+    <NCProvider>
+    	<CreateNweet/>
+    	<NweetList/>
+    </NCProvider>
+    ....)
+    };
+    ```
+    
+    <CreateNweet.js> - context, reducer를 실행 할 곳, nweet(게시글을 작성)하는 기능을 담당 
+    
+    ```jsx
+    const CreateNweet=()=>{
+    	const {state, dispatch}= useContext(NweetContext);
+    	const {text, attchment}= state.input;
+    .....
+    	/*input에 작성하고, 작성된 글을 저장하는 기능*/
+    	const onChange= useCalback(e=>{
+    		const {name, value}= e.target:
+    .....
+    },[]);
+    
+     return(
+    	.....
+    <div>
+    	<textarea .... onchange={onChange}/>
+    </div>
+    )
+    ......
+    };
+    ```
+    
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. 주의
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A. context의 값이 변경될 경우 context를 사용하는 컴포넌트들은 모두 렌더링 된다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ → 해결방법: 커뮤니티에서 나오는 해결방법으로는 context를 분할하여 필요한 곳에서 필요한 것만 사용하도록 하거나 React.memo 나 useMemo로 최적화를 하는 것이 있음
 
-### `yarn eject`
+B. Context를 사용하면 재사용하지 어렵다. 
+→ 해결 방법:  context를 사용한 컴포넌트를 재사용해야 한다면 context에서 value을 받아서 사용할 컴포넌트(ui)를 context를 생성하는 컴포넌트와 별도로 만들어서  별도로 만든 컴포넌트를 재사용할 수 있다. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. 참고자료
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[https://www.youtube.com/watch?v=sqz45pnvJHg&feature=youtu.be](https://www.youtube.com/watch?v=sqz45pnvJHg&feature=youtu.be)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[https://medium.com/react-native-seoul/react-리액트를-처음부터-배워보자-05-context-api-d053f92cd645](https://medium.com/react-native-seoul/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90-05-context-api-d053f92cd645)
