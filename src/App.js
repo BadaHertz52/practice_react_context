@@ -13,7 +13,7 @@ function App() {
         <Profile/> 
       </div>
       <div id="main" >
-        <div>HOME</div>
+        <div>홈</div>
         <NCProvider>
           <CreateNweet/>
           <NweetList/>

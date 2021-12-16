@@ -1,4 +1,4 @@
-import React, { useCallback, useState ,useContext } from "react";
+import React, { useCallback, useState ,useContext, useEffect } from "react";
 import { NweetContext } from "./NweetContext";
 import { ProfileContext } from "./ProfileContext";
 
@@ -7,18 +7,21 @@ const NweetList =()=>{
   const photo =myProfile.photo;
   const {state, dispatch}=useContext(NweetContext);
   const [popup, setPopup]=useState(false);
-  const [target, setTarget]=useState(null);
-  const [Top, setTop] = useState("");
-  const myNweets =state.myNweets;;
+  const [target, setTarget]=useState(null);;
+  const myNweets =state.myNweets;
 
+  const inputText =(id ,text)=>{
+    const ID =document.getElementById(`${id}`);
+    console.log(ID);
+    ID.innerHTML = text;
+  };
+  useEffect(()=>{
+    myNweets.forEach(nweet => inputText(myNweets.indexOf(nweet),nweet.text));
+  },[myNweets])
+  
   const onPopup =(createdAt)=>{
     setTarget(createdAt);
     setPopup(true);
-    const profile =document.getElementById('profile');
-    const clientRect = profile.getBoundingClientRect();
-    const profileTop =clientRect.top;
-    setTop(profileTop);
-    console.log(profileTop);
 
   };
   const onCancle =()=>{
@@ -48,7 +51,7 @@ const NweetList =()=>{
             </button>
           </div>
           <div className="nweet_text_attachment">
-            <div>{nweet.text}</div>
+            <div id={myNweets.indexOf(nweet)}></div>
             {nweet.attachmentUrl !== "" && 
             <img src={nweet.attachmentUrl} 
             className="attachment"

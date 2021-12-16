@@ -8,7 +8,7 @@ const initialState ={
   },
   myNweets:[{
     createdAt:`2021-12-13-21:36`,
-    text:"겨울에는 귤!🍊",
+    text:"겨울에는 귤! <br/> 😁🍊",
     attachmentUrl:tangerines}]
   /* 형식
   {

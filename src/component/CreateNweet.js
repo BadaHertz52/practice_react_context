@@ -32,13 +32,13 @@ const CreateNweet =()=>{
     
   },[]) ;
 
-  const onCreate =useCallback( (e)=>{
+  const onCreate =useCallback( (e)=>{ 
     e.preventDefault();
       dispatch({
         type:"CREATE",
         nweet:{
           createdAt :`${year}-${month}-${date}-${hour}:${minutes}`,
-          text : text.replace(/(\r\n|\n)/g, '<br>'),
+          text :text.replace(/(\r\n|\n)/g, '<br/>'),
           attachmentUrl
         },
     }) ;
