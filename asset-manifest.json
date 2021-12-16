@@ -5,20 +5,20 @@
     "main.js.map": "/practice_react_context/static/js/main.c90303b2.chunk.js.map",
     "runtime-main.js": "/practice_react_context/static/js/runtime-main.529511cb.js",
     "runtime-main.js.map": "/practice_react_context/static/js/runtime-main.529511cb.js.map",
-    "static/js/2.901e2605.chunk.js": "/practice_react_context/static/js/2.901e2605.chunk.js",
-    "static/js/2.901e2605.chunk.js.map": "/practice_react_context/static/js/2.901e2605.chunk.js.map",
+    "static/js/2.21ffc444.chunk.js": "/practice_react_context/static/js/2.21ffc444.chunk.js",
+    "static/js/2.21ffc444.chunk.js.map": "/practice_react_context/static/js/2.21ffc444.chunk.js.map",
     "static/js/3.fed0099b.chunk.js": "/practice_react_context/static/js/3.fed0099b.chunk.js",
     "static/js/3.fed0099b.chunk.js.map": "/practice_react_context/static/js/3.fed0099b.chunk.js.map",
     "index.html": "/practice_react_context/index.html",
     "static/css/main.ad66374c.chunk.css.map": "/practice_react_context/static/css/main.ad66374c.chunk.css.map",
-    "static/js/2.901e2605.chunk.js.LICENSE.txt": "/practice_react_context/static/js/2.901e2605.chunk.js.LICENSE.txt",
+    "static/js/2.21ffc444.chunk.js.LICENSE.txt": "/practice_react_context/static/js/2.21ffc444.chunk.js.LICENSE.txt",
     "static/media/sasha.f07de0b3.jpg": "/practice_react_context/static/media/sasha.f07de0b3.jpg",
     "static/media/tangerines.b3b737c8.jpg": "/practice_react_context/static/media/tangerines.b3b737c8.jpg",
     "static/media/vincentiu.aee19ef0.jpg": "/practice_react_context/static/media/vincentiu.aee19ef0.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.529511cb.js",
-    "static/js/2.901e2605.chunk.js",
+    "static/js/2.21ffc444.chunk.js",
     "static/css/main.ad66374c.chunk.css",
     "static/js/main.c90303b2.chunk.js"
   ]
