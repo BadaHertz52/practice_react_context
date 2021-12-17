@@ -7,7 +7,31 @@ import NCProvider from "./component/NweetContext";
 import CreateNweet from './component/CreateNweet';
 import NweetList from './component/NweetList';
 function App() {
+  const borderStyle = "3px solid black"  ;
+  const onShowEdit =()=>{
+    const editBtn = document.getElementById("profileEditBtn");
+    editBtn.style.border === "none" 
+    ? 
+    editBtn.style.border= borderStyle
+    : 
+    editBtn.style.border ="none";
+  };
+  const onShowCN =()=>{
+    const CN = document.getElementById("createNweet");
+    CN.style.border === "" ? 
+    CN.style.border =borderStyle
+    :
+    CN.style.border = ""
+  };
+  const onShowDelete =()=>{
+    const deleteBtn =document.getElementById("deleteBtn");
+    deleteBtn.style.border ===""?
+    deleteBtn.style.border = borderStyle
+    :
+    deleteBtn.style.border ="initial";
+  };
   return(
+    <>
     <PCProvider>
       <div id="side">
         <Profile/> 
@@ -20,6 +44,28 @@ function App() {
         </NCProvider>
       </div>
     </PCProvider>
+      <div id="explain">
+        <div>
+          <div>😀사용법</div>
+          <ul>
+            <li>
+              <button onClick={onShowEdit}>
+                ▫ "수정" 버튼으로 프로필을 수정해보세요.
+              </button>
+            </li>
+            <li>
+              <button onClick={onShowCN}> ▫ 글과 사진으로 나만의 게시물을 작성해보세요.</button>
+            </li>
+            <li>
+              <button onClick={onShowDelete}>
+              ▫  "삭제" 버튼으로 해당 게시글을 지울 수 있습니다. 
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </>
   );
 }
 

@@ -10,9 +10,10 @@ const EditProfile =({setPopup})=>{
   const [headerUrl, setHeaderUrl] =useState(myProfile.header );
   const [photoUrl , setPhotoUrl] =useState(myProfile.photo);
 
+  const explain = document.getElementById("explain");
+
   const onSubmit =useCallback((e)=>{
     e.preventDefault();
-    console.log(introduce, userName);
     dispatch({
       type:'EDIT_PROFILE',
       myProfile:{
@@ -24,6 +25,7 @@ const EditProfile =({setPopup})=>{
     });
     setPopup(false);
   },[userName, photoUrl,headerUrl , introduce]);
+
   const onFileChange =useCallback((e)=>{
     const {name } = e.target ; 
     const theFile =e.target.files[0];
@@ -40,6 +42,7 @@ const EditProfile =({setPopup})=>{
       value: name ==="header" ? headerUrl : photoUrl
     })
   },[]);
+
   const onChange =useCallback((e)=>{
     const {name, value}= e.target;
     dispatch({
@@ -52,7 +55,7 @@ const EditProfile =({setPopup})=>{
     <section id="editProfile">
       <div>
         <p>프로필 수정</p>
-        <button onClick={()=>setPopup(false)}>✖</button>
+        <button onClick={()=>{setPopup(false)}}>✖</button>
       </div>
       <form onSubmit={onSubmit}>
       <div  className="editImg header" id="editProfile_header">

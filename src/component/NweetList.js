@@ -46,8 +46,8 @@ const NweetList =()=>{
           <div className="nweet_inform">
             <div>{myProfile.userName}</div>
             <div>{nweet.createdAt}</div>
-            <button  onClick={()=>onPopup(nweet.createdAt)}>
-                X
+            <button id={myNweets.indexOf(nweet)===0 && "deleteBtn"} onClick={()=>onPopup(nweet.createdAt)}>
+                삭제
             </button>
           </div>
           <div className="nweet_text_attachment">

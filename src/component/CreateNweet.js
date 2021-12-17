@@ -45,7 +45,7 @@ const CreateNweet =()=>{
       dispatch({
         type:'CLREAR_INPUT'
       });
-
+      setAttachmentUrl("");
   },[text ,attachmentUrl]);
 
   return (
@@ -63,7 +63,7 @@ const CreateNweet =()=>{
             onChange={onChange}  placeholder="무슨 일이 일어나고 있나요? "
           />
           {attachmentUrl !== "" && 
-          <img src={attachmentUrl} alt="attachment" width="100px" height="100px"/>
+          <img src={attachmentUrl} alt="attachment"/>
           }
         </div>
         <div id="nweetFun">

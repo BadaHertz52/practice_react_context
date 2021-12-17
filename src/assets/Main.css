@@ -29,7 +29,10 @@ textarea{
 #createNweet form > div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+}
+#createNweet form >div ,
+#nweet_contents {
+  width: 49vw;
 }
 #text_attachment {
   padding :4% ;
@@ -43,12 +46,15 @@ textarea{
 #text_attachment textarea:focus-visible{
   outline: none;
 }
+.attachment ,
 #text_attachment img{
-  width: 45vw;
-  height:25vw;
+  width: 40vw ;
+  height: 24vw ;
+  /*aspect-ratio: 5/3*/
   border-radius:10px;
   margin-top: 2vw;
 }
+
 #createNweet label{
   padding: 2%;
   font-size: 2.7vw;
@@ -60,16 +66,16 @@ textarea{
 }
 
 #nweetFun{
+  width:40vw;
   padding-left: 4%;
   display: flex;
+  justify-content: space-between;
 }
 #nweetFun input:last-child{
-  background-color:rgb(194, 225, 250);;
+  background-color:rgb(194, 225, 250);
   border:none;
-  border-radius: 19px ;
-  padding:0 5%;
-  font-size: 2vw;
-  margin-left: 30vw;
+  border-radius: 18px ;
+  font-size: 1.8vw;
 }
 #nweetFun input:last-child:hover{
   background-color:rgb(35, 123, 223); 
@@ -90,34 +96,26 @@ textarea{
   margin-left: 2vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around
+  justify-content: space-around;
 }
 .nweet_inform{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 2vw;
   font-size: 2vw;
 }
 .nweet_inform div{
   margin-right:2vw ;
 }
-.nweet_inform div:nth-child(2){
-  font-size: 6px;
-}
+
 .nweet_inform button{
   font-size: 2vw;
-  position:absolute;
-  right:3vw;
+
 }
 
 .nweet_text_attachment{
   font-size:2.3vw
-}
-.attachment{
-  width: 45vw ;
-  height: 25vw ;
-  border-radius:10px;
-  margin-top: 2vw;
 }
 
 #alert {
@@ -167,19 +165,25 @@ textarea{
   padding: 3vw 0;
   }
   #nweetFun input:last-child{
-    margin-left: 25vw;
-    padding: 0 3%;
-    font-size: 1.2rem;
+    margin-left: 20vw;
+    font-size: 1rem;
   }
-  .attachment{
+  .attachment , 
+  #text_attachment img{
     width: 35vw;
-    height: 19vw;
+    height: 21vw;
   }
-  .nweet_inform button{
-    right: 12vw;
+  #nweetFun {
+    width:37vw;
+  }
+  .nweet_contents{
+    width: 42vw;
   }
   .nweet_inform div:nth-child(2){
     font-size: 1.3rem;
+  }
+  .nweet_inform button{
+
   }
   .nweet_text_attachment{
     font-size: 2vw;

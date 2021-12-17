@@ -16,7 +16,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 30%;
+  width: 35%;
   height: 100%;
   padding:3% ;
   display: flex;
@@ -27,7 +27,7 @@
 #main{
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 65%;
   margin-top: 4vh;
 }
 
@@ -38,14 +38,50 @@ label ,button{
 }
 label:hover ,button:hover{
   background-color:rgb(35, 123, 223); 
-  color: #fff;
+  color: #ffff;
+}
+#explain {
+  display: none;
 }
 
 @media screen and (min-width:1024px) {
   #side{
-    width: 35%;
+    width: 20%;
   }
   #main{
-    width: 65%;
+    width: 50%;
+  }
+  #explain{
+    display: block;
+    width: 30%; 
+    margin-top: 8vh;
+    padding: 0 1vw;
+  }
+  #explain > div {
+    padding: 2%;
+    border: 2px solid  rgb(156, 156, 156);
+    border-radius: 10px;
+  }
+  #explain>div div{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 1.2rem;
+  }
+  #explain ul{
+    list-style: none;
+    padding: 0;
+  }
+  #explain li {
+    margin-top:1.5rem;
+  }
+  #explain button {
+    font-size: 1.2rem;
+    background-color: initial;
+    text-align: initial;
+  }
+  #explain button:hover{
+    color:rgb(37, 83, 134); 
+    font-weight: bolder;
   }
 }
