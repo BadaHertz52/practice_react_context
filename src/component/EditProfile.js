@@ -10,17 +10,16 @@ const EditProfile =({setPopup})=>{
   const [headerUrl, setHeaderUrl] =useState(myProfile.header );
   const [photoUrl , setPhotoUrl] =useState(myProfile.photo);
 
-  const explain = document.getElementById("explain");
-
   const onSubmit =useCallback((e)=>{
     e.preventDefault();
+    console.log("create", userName, introduce);
     dispatch({
       type:'EDIT_PROFILE',
       myProfile:{
-        userName,
+        userName: userName === "" ? myProfile.userName :userName,
         photo:photoUrl,
         header:headerUrl,
-        introduce,
+        introduce :introduce === "" ? myProfile.introduce :introduce,
       }
     });
     setPopup(false);
@@ -47,7 +46,7 @@ const EditProfile =({setPopup})=>{
     const {name, value}= e.target;
     dispatch({
       type:'CHANGE_PROFILE',
-      name,
+      name ,
       value
     });
   },[]);
