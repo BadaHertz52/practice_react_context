@@ -12,7 +12,6 @@ const NweetList =()=>{
 
   const inputText =(id ,text)=>{
     const ID =document.getElementById(`${id}`);
-    console.log(ID);
     ID.innerHTML = text;
   };
   useEffect(()=>{
