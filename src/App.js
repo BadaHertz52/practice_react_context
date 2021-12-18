@@ -11,7 +11,6 @@ function App() {
   
   const onShowEdit =()=>{
     const editBtn = document.getElementById("profileEditBtn");
-    console.log(editBtn.style.border);
     editBtn.style.border === "" 
     ? 
     editBtn.style.border= borderStyle
