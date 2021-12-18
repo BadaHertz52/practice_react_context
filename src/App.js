@@ -29,7 +29,7 @@ function App() {
     deleteBtn.style.border ===""?
     deleteBtn.style.border = borderStyle
     :
-    deleteBtn.style.border ="initial";
+    deleteBtn.style.border ="";
   };
   return(
     <>
