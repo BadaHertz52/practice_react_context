@@ -67,6 +67,7 @@ textarea{
 
 #nweetFun{
   width:40vw;
+  height: 4.5vw;
   padding-left: 4%;
   display: flex;
   justify-content: space-between;
@@ -108,12 +109,9 @@ textarea{
 .nweet_inform div{
   margin-right:2vw ;
 }
-
-.nweet_inform button{
+.nweet_inform button {
   font-size: 2vw;
-
 }
-
 .nweet_text_attachment{
   font-size:2.3vw
 }
@@ -170,22 +168,28 @@ textarea{
   }
   .attachment , 
   #text_attachment img{
-    width: 35vw;
-    height: 21vw;
+    width: 30vw;
+    height: 18vw;
+  }
+  #text_attachment textarea{
+    font-size: 1.3rem;
   }
   #nweetFun {
-    width:37vw;
+    width:88%;
+    height: 2.3rem;
   }
+
   .nweet_contents{
     width: 42vw;
   }
-  .nweet_inform div:nth-child(2){
+  .nweet_inform{
     font-size: 1.3rem;
+    width: 90%;
   }
   .nweet_inform button{
-
+    font-size: 1.3rem;
   }
   .nweet_text_attachment{
-    font-size: 2vw;
+    font-size: 1.3rem;
   }
 }
