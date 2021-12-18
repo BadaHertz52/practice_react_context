@@ -8,13 +8,15 @@ import CreateNweet from './component/CreateNweet';
 import NweetList from './component/NweetList';
 function App() {
   const borderStyle = "3px solid black"  ;
+  
   const onShowEdit =()=>{
     const editBtn = document.getElementById("profileEditBtn");
-    editBtn.style.border === "none" 
+    console.log(editBtn.style.border);
+    editBtn.style.border === "" 
     ? 
     editBtn.style.border= borderStyle
     : 
-    editBtn.style.border ="none";
+    editBtn.style.border ="";
   };
   const onShowCN =()=>{
     const CN = document.getElementById("createNweet");
@@ -49,15 +51,17 @@ function App() {
           <div>😀사용법</div>
           <ul>
             <li>
-              <button onClick={onShowEdit}>
+              <button onMouseOver={onShowEdit} onMouseOut={onShowEdit}>
                 ▫ "수정" 버튼으로 프로필을 수정해보세요.
               </button>
             </li>
             <li>
-              <button onClick={onShowCN}> ▫ 글과 사진으로 나만의 게시물을 작성해보세요.</button>
+              <button onMouseOver={onShowCN} onMouseOut={onShowCN}> 
+              ▫ 글과 사진으로 나만의 게시물을 작성해보세요.
+              </button>
             </li>
             <li>
-              <button onClick={onShowDelete}>
+              <button onMouseOver={onShowDelete} onMouseOut={onShowDelete}>
               ▫  "삭제" 버튼으로 해당 게시글을 지울 수 있습니다. 
               </button>
             </li>
