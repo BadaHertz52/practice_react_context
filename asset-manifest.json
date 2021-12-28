@@ -1,25 +1,18 @@
 {
   "files": {
-    "main.css": "/practice_react_context/static/css/main.3a0b9f07.chunk.css",
-    "main.js": "/practice_react_context/static/js/main.cb67328c.chunk.js",
-    "main.js.map": "/practice_react_context/static/js/main.cb67328c.chunk.js.map",
-    "runtime-main.js": "/practice_react_context/static/js/runtime-main.529511cb.js",
-    "runtime-main.js.map": "/practice_react_context/static/js/runtime-main.529511cb.js.map",
-    "static/js/2.901e2605.chunk.js": "/practice_react_context/static/js/2.901e2605.chunk.js",
-    "static/js/2.901e2605.chunk.js.map": "/practice_react_context/static/js/2.901e2605.chunk.js.map",
-    "static/js/3.fed0099b.chunk.js": "/practice_react_context/static/js/3.fed0099b.chunk.js",
-    "static/js/3.fed0099b.chunk.js.map": "/practice_react_context/static/js/3.fed0099b.chunk.js.map",
+    "main.css": "/practice_react_context/static/css/main.c0c48b52.css",
+    "main.js": "/practice_react_context/static/js/main.e618c935.js",
+    "static/js/787.668d6028.chunk.js": "/practice_react_context/static/js/787.668d6028.chunk.js",
+    "static/media/vincentiu.jpg": "/practice_react_context/static/media/vincentiu.aee19ef05696c5ba0b60.jpg",
+    "static/media/tangerines.jpg": "/practice_react_context/static/media/tangerines.b3b737c86624f50ce9f7.jpg",
+    "static/media/sasha.jpg": "/practice_react_context/static/media/sasha.f07de0b33de8f2d2fc64.jpg",
     "index.html": "/practice_react_context/index.html",
-    "static/css/main.3a0b9f07.chunk.css.map": "/practice_react_context/static/css/main.3a0b9f07.chunk.css.map",
-    "static/js/2.901e2605.chunk.js.LICENSE.txt": "/practice_react_context/static/js/2.901e2605.chunk.js.LICENSE.txt",
-    "static/media/sasha.f07de0b3.jpg": "/practice_react_context/static/media/sasha.f07de0b3.jpg",
-    "static/media/tangerines.b3b737c8.jpg": "/practice_react_context/static/media/tangerines.b3b737c8.jpg",
-    "static/media/vincentiu.aee19ef0.jpg": "/practice_react_context/static/media/vincentiu.aee19ef0.jpg"
+    "main.c0c48b52.css.map": "/practice_react_context/static/css/main.c0c48b52.css.map",
+    "main.e618c935.js.map": "/practice_react_context/static/js/main.e618c935.js.map",
+    "787.668d6028.chunk.js.map": "/practice_react_context/static/js/787.668d6028.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.529511cb.js",
-    "static/js/2.901e2605.chunk.js",
-    "static/css/main.3a0b9f07.chunk.css",
-    "static/js/main.cb67328c.chunk.js"
+    "static/css/main.c0c48b52.css",
+    "static/js/main.e618c935.js"
   ]
 }
