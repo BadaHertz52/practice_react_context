@@ -12,7 +12,6 @@ const EditProfile =({setPopup})=>{
 
   const onSubmit =useCallback((e)=>{
     e.preventDefault();
-    console.log("create", userName, introduce);
     dispatch({
       type:'EDIT_PROFILE',
       myProfile:{
